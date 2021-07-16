@@ -18,6 +18,7 @@ This is implicitized by the above method, and tessellated by
 
 There is also an alternative quasi-implicitization method 
 called [M-reps](https://doi.org/10.1016/j.cad.2013.08.014),
+implemented in `mrep.jl`,
 where curves as well as triangular and tensor product Bézier surfaces
 are represented as matrices; evaluation involves a singular value decomposition.
 See also my note on normalization in `mrep-normalization.pdf`.
