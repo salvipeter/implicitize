@@ -10,7 +10,7 @@ to handle symbolic computations and generate, in turn,
 the implicit equation based on the Bézier control points.
 (See also usage notes in the source.)
 
-As an example, here's the quadratic-by-linear Bézier surface in `test.bzr`:
+As an example, here's the quadratic-by-linear Bézier surface in `test21.bzr`:
 ![image](example/bezier.jpg "Bézier surface")
 This is implicitized by the above method, and tessellated by
 [dual contouring](http://github.com/salvipeter/dual-contouring/) in `implicitize-test.cc`:

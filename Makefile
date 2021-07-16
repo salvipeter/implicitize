@@ -1,8 +1,11 @@
 all: implicitize-test
 
-CXXFLAGS=-O3
+DC=../dual-contouring
 
-implicitize-test: implicitize-test.cc
-	g++ -o $@ $^ $(CXXFLAGS) \
-            -I../dual-contouring \
-            -L../dual-contouring/build -ldualcontour
+INCLUDES=-I$(DC)
+LIBS=-L$(DC)/build -ldualcontour
+
+CXXFLAGS=-O3 $(INCLUDES)
+
+implicitize-test: implicitize-test.o surf21.o surf31.o
+	g++ -o $@ $^ $(LIBS)
