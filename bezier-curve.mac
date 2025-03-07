@@ -1,0 +1,11 @@
+/* -*- mode: maxima -*- */
+/* Usage: maxima --very-quiet -b bezier-curve.mac > output.txt */
+degree: 3$
+B(n,k,t) := binomial(n,k) * t^k * (1-t)^(n-k)$
+Cx: sum(Px[k] * B(degree,k,t), k, 0, degree)$
+Cy: sum(Py[k] * B(degree,k,t), k, 0, degree)$
+res: resultant(Cx - x, Cy - y, t)$
+display2d: false$
+subst ("^"=lambda([a, b], pow(a, b)), res);
+subst ("^"=lambda([a, b], pow(a, b)), diff(res,x));
+subst ("^"=lambda([a, b], pow(a, b)), diff(res,y));
